@@ -12,8 +12,7 @@ public class CarController : Car
     [SerializeField] Ai agent;
     [SerializeField] SelfDrivingCar pathFollower;
     [SerializeField] GameObject racingCameraObject;
-    [SerializeField] GameObject turboFlash1; //nitrous 1
-    [SerializeField] GameObject turboFlash2; //nitrous 2
+    [SerializeField] GameObject turboFlash; //nitrous
     [SerializeField] AudioSource gasAudio;
     [SerializeField] AudioSource brakeAudio;
     [SerializeField] AudioSource turboFlashAudio;
@@ -50,14 +49,9 @@ public class CarController : Car
             //carModel.SetCarLabel(GameManager.SetUsername());
         }
         
-        if (turboFlash1 != null)
+        if (turboFlash != null)
         {
-            turboFlash1.SetActive(false);
-        }
-
-        if (turboFlash2 != null)
-        {
-            turboFlash2.SetActive(false);
+            turboFlash.SetActive(false);
         }
     }
 
@@ -249,8 +243,7 @@ public class CarController : Car
 
     public void ToggleTurboFlash(bool shouldShow)
     {
-        turboFlash1.SetActive(shouldShow);
-        turboFlash2.SetActive(shouldShow);
+        turboFlash.SetActive(shouldShow);
 
         if (shouldShow == true)
         {
