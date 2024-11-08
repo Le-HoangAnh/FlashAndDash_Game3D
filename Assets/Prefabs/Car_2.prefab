@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef5b38d5a6c5914e86de1ea823b75e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carModel: {fileID: 90991318524647213}
+  carModal: {fileID: 90991318524647213}
   carView: {fileID: 8330585837897588996}
   car: {fileID: 360318297885943699}
   rigidbody: {fileID: 360318297885943702}

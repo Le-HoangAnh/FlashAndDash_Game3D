@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CarController : Car
 {
-    [SerializeField] CarModel carModel;
+    [SerializeField] CarModal carModal;
     [SerializeField] CarView carView;
     [SerializeField] GameObject car;
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] bool isAIControllerCar;
-    [SerializeField] Ai agent;
+    [SerializeField] AI agent;
     [SerializeField] SelfDrivingCar pathFollower;
     [SerializeField] GameObject racingCameraObject;
     [SerializeField] GameObject turboFlash; //nitrous
@@ -46,7 +46,7 @@ public class CarController : Car
         
         if (!isAIControllerCar)
         {
-            //carModel.SetCarLabel(GameManager.SetUsername());
+            //carModal.SetCarLabel(GameManager.SetUsername());
         }
         
         if (turboFlash != null)
@@ -140,12 +140,12 @@ public class CarController : Car
 
     public string GetCarName()
     {
-        return carModel.GetCarName();
+        return carModal.GetCarName();
     }
 
     public float GetCarPrice()
     {
-        return carModel.GetCarPrice();
+        return carModal.GetCarPrice();
     }
 
     public void SetCarRims()
@@ -175,27 +175,27 @@ public class CarController : Car
 
     public void HandleCheckpointWasHit()
     {
-        carModel.CheckpointWasHit();
+        carModal.CheckpointWasHit();
     }
 
     public void SetCarLabel(string label)
     {
-        carModel.SetCarLabel(label);
+        carModal.SetCarLabel(label);
     }
 
     public string GetCarLable()
     {
-        return carModel.GetCarLabel();
+        return carModal.GetCarLabel();
     }
 
     public void SetDistanceToNextCheckpoint(float distance)
     {
-        carModel.SetDistanceToNextCheckpoint(distance);
+        carModal.SetDistanceToNextCheckpoint(distance);
     }
 
     public float GetDistanceToNextCheckpoint()
     {
-        return carModel.GetDistanceToNextCheckpoint();
+        return carModal.GetDistanceToNextCheckpoint();
     }
 
     public List<AxleInfo> axleInfos;

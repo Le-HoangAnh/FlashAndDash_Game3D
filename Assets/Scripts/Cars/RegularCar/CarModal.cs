@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarModel : MonoBehaviour
+public class CarModal : MonoBehaviour
 {
     [SerializeField] private string carName;
     [SerializeField] private float carPrice;
