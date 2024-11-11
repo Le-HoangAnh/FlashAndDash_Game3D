@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
-public class OneButtonModal : MonoBehaviour
+public class OneButtonModal : Modal
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected Button button;
+    private UnityAction callBack;
+
+    protected override void OnEnable()
     {
-        
+        base.OnEnable();
+        button.onClick.AddListener(HandleButtonClicked);
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnDisable()
     {
-        
+        base.OnDisable();
+        button.onClick.RemoveListener(HandleButtonClicked);
+    }
+
+    protected virtual void HandleButtonClicked()
+    {
+        Events.okButtonClicked?.Invoke();
+        callBack?.Invoke();
+    }
+
+    public void Init(UnityAction callBack)
+    {
+        this.callBack = callBack;
     }
 }

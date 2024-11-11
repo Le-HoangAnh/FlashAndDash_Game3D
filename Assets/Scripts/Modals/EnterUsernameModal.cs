@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class EnterUsernameModal : MonoBehaviour
+public class EnterUsernameModal : OneButtonModal
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] TMP_InputField inputField;
 
-    // Update is called once per frame
-    void Update()
+    protected override void HandleButtonClicked()
     {
-        
+        base.HandleButtonClicked();
+        string username = inputField.text;
+        Events.usernameSubmitted(username);
     }
 }

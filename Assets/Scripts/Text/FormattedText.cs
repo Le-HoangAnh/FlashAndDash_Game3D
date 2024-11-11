@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class FormattedText : MonoBehaviour
+public abstract class FormattedText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected TextMeshProUGUI formattedText;
+    [SerializeField] protected string prefix;
+
+    public string GetValue()
     {
-        
+        return formattedText.text;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected abstract void FormatText();
 }
