@@ -222,8 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 2890516982280464742}
   loadGameButton: {fileID: 763913970}
-  enterUsernameModel: {fileID: 0}
-  saveSlotsModel: {fileID: 0}
+  enterUsernameModal: {fileID: 0}
+  saveSlotsModal: {fileID: 0}
 --- !u!4 &353865488
 Transform:
   m_ObjectHideFlags: 0
@@ -987,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3212904258075483794, guid: 96b3822e370d8a24cbaba9ddc07c6ff0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.95965284
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3212904258075483794, guid: 96b3822e370d8a24cbaba9ddc07c6ff0, type: 3}
       propertyPath: m_AnchorMin.x
@@ -995,7 +995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3212904258075483794, guid: 96b3822e370d8a24cbaba9ddc07c6ff0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.8540156
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 3212904258075483794, guid: 96b3822e370d8a24cbaba9ddc07c6ff0, type: 3}
       propertyPath: m_SizeDelta.x

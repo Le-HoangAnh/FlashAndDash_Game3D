@@ -46,7 +46,7 @@ public class NavigationManager : Singleton<NavigationManager>
         LoadScene(navigationStack.Peek(), sceneDataStack.Peek() ,false);
     }
 
-    public static void LoadScene(string sceneName, Dictionary<string, string> sceneData, bool addToNavigationStack = true)
+    public static void LoadScene(string sceneName, Dictionary<string, string> sceneData = null, bool addToNavigationStack = true)
     {
         SetSceneData(sceneData);
         if (addToNavigationStack)

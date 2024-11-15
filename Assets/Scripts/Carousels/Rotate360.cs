@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Rotate360 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float spped;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.rotation = transform.rotation * Quaternion.AngleAxis(spped, Vector3.up);
     }
 }
