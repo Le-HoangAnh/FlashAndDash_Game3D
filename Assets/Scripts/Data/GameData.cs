@@ -6,9 +6,6 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public string username;
-    public float metallic;
-    public float smoothness;
-    public List<Material> rimMaterials;
     public float playTime;
     public float money;
     public long lastPlayed;

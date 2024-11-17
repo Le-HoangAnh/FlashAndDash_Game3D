@@ -18,7 +18,6 @@ public class GameDataEditor : Editor
             gameDataScripts.money = 0;
             gameDataScripts.lastPlayed = 0;
             gameDataScripts.currentActiveCar = 0;
-            gameDataScripts.rimMaterials = new List<Material>();
             gameDataScripts.unlockedCars = new List<bool>();
         }
     }

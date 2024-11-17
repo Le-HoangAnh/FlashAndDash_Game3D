@@ -4,5 +4,35 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: ff312c168333dae4fa6957b91902cffe
+  - enabled: 1
+    path: Assets/Scenes/Main/Welcome.unity
+    guid: 2bbb35960d8e5fc47885527c278b6c09
+  - enabled: 1
+    path: Assets/Scenes/Main/Main.unity
+    guid: 56c6a240e55c9824c84ffabeb4177195
+  - enabled: 1
+    path: Assets/Scenes/Main/Garage/Garage.unity
+    guid: c959c098c2ae1144fa212ceefbd7a9e2
+  - enabled: 1
+    path: Assets/Scenes/Main/FTUE/ChooseACar.unity
+    guid: a77da08cd12804d459551817ab9b84bc
+  - enabled: 1
+    path: Assets/Scenes/Main/Race/SelectATrack.unity
+    guid: 51bb76c5db4ebcb409d0f74c45e10b36
+  - enabled: 1
+    path: Assets/Scenes/Main/Race/Tracks/Track1.unity
+    guid: fe9e5beefad269542a650a1587007ff8
+  - enabled: 1
+    path: Assets/Scenes/Main/Race/Tracks/Track2.unity
+    guid: bfb16312ffdd0cb40b21302343278113
+  - enabled: 1
+    path: Assets/Scenes/Main/Race/Tracks/Track3.unity
+    guid: 245f5693fc7134744868a1a00ed80316
+  - enabled: 1
+    path: Assets/Scenes/Main/Shop/Shop.unity
+    guid: fc86649308cb60445ae7d109c805ed47
   m_configObjects: {}

@@ -129,7 +129,7 @@ public class CarController : Car
 
         if (applyCustomizations == true)
         {
-            SetCarRims();
+            //SetCarRims();
         }
     }
 
@@ -148,10 +148,10 @@ public class CarController : Car
         return carModal.GetCarPrice();
     }
 
-    public void SetCarRims()
-    {
-        carView.SetCarRims();
-    }
+    //public void SetCarRims()
+    //{
+    //    carView.SetCarRims();
+    //}
 
     public void SetRimMaterial(Material material)
     {

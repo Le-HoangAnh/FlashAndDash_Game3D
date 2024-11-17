@@ -46,7 +46,7 @@ public class NavigationManager : Singleton<NavigationManager>
         LoadScene(navigationStack.Peek(), sceneDataStack.Peek() ,false);
     }
 
-    public static void LoadScene(string sceneName, Dictionary<string, string> sceneData = null, bool addToNavigationStack = true)
+    public static void LoadScene(string sceneName, Dictionary<string, string> sceneData = null, bool addToNavigationStack = false)
     {
         SetSceneData(sceneData);
         if (addToNavigationStack)
@@ -62,14 +62,14 @@ public class NavigationManager : Singleton<NavigationManager>
         SceneManager.LoadScene(sceneName);
     }
 
-    private static void SetSceneData(Dictionary<string, string> sceneData)
+    private static void SetSceneData(Dictionary<string, string> sceneData = null)
     {
-        sceneData.Clear();
+        //sceneData.Clear();
         if (sceneData != null)
         {
             foreach (string key in sceneData.Keys)
             {
-                sceneData.Add(key, sceneData[key]);
+                //sceneData.Add(key, sceneData[key]);
             }
         }
     }

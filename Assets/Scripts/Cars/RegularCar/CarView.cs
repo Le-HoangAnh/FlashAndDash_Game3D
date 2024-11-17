@@ -8,14 +8,14 @@ public class CarView : MonoBehaviour
     [SerializeField] List<GameObject> wheels;
     [SerializeField] List<MeshRenderer> rimMeshes;
 
-    public void SetCarRims()
-    {
-        //Material[] carBodyMaterials = GetCarBodyMaterials();
-        //if (GameManager.GetRimMaterial() != null)
-        //{
-        //    SetRimMaterial(GameManager.GetRimMaterial());
-        //}
-    }
+    //public void SetCarRims()
+    //{
+    //    Material[] carBodyMaterials = GetCarBodyMaterials();
+    //    if (GameManager.GetRimMaterial() != null)
+    //    {
+    //        SetRimMaterial(GameManager.GetRimMaterial());
+    //    }
+    //}
 
     public void SetRimMaterial(Material material)
     {

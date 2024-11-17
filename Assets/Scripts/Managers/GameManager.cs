@@ -12,6 +12,23 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] AudioManager audioManager;
     public static GameData gameData;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        Events.usernameSubmitted += HandleUsernameSubmitted;
+        Events.carChosen += HandleCarChosen;
+        Events.backButtonPressed += PlayBackButtonAudio;
+        Events.okButtonClicked += PlayOKButtonAudio;
+        Events.cancelButtonClicked += PlayCancelButtonAudio;
+        Events.saveSlotClicked += PlaySaveSlotSound;
+        Events.leftOrRightButtonClicked += PlayRightAndLeftButtonAudio;
+        Events.purchaseButtonClicked += PlayPurchaseAudio;
+    }
+
     private void OnDestroy()
     {
         if (gameData != null)
@@ -19,6 +36,15 @@ public class GameManager : Singleton<GameManager>
             gameData.lastPlayed = DateTime.Now.Ticks;
             SaveScriptableObject(gameData);
         }
+
+        Events.usernameSubmitted -= HandleUsernameSubmitted;
+        Events.carChosen -= HandleCarChosen;
+        Events.backButtonPressed -= PlayBackButtonAudio;
+        Events.okButtonClicked -= PlayOKButtonAudio;
+        Events.cancelButtonClicked -= PlayCancelButtonAudio;
+        Events.saveSlotClicked -= PlaySaveSlotSound;
+        Events.leftOrRightButtonClicked -= PlayRightAndLeftButtonAudio;
+        Events.purchaseButtonClicked -= PlayPurchaseAudio;
     }
 
     private void Update()
@@ -27,11 +53,6 @@ public class GameManager : Singleton<GameManager>
         {
             gameData.playTime += Time.deltaTime;
         }
-    }
-
-    public static Material GetRimMaterial()
-    {
-        return gameData.rimMaterials[GetCurrentActiveCarIndex()];
     }
 
     public static int GetCurrentActiveCarIndex()
@@ -86,17 +107,7 @@ public class GameManager : Singleton<GameManager>
     public static float GetPlayTime()
     {
         return gameData.playTime;
-    }
-
-    public static float GetMetallic()
-    {
-        return gameData.metallic;
-    }
-
-    public static float GetSmoothness()
-    {
-        return gameData.smoothness;
-    }    
+    } 
 
     private void HandleUsernameSubmitted(string username)
     {
@@ -113,7 +124,6 @@ public class GameManager : Singleton<GameManager>
     private void ResetGameData()
     {
         gameData.username = "";
-        gameData.rimMaterials = new List<Material>() { defaultMaterial, defaultMaterial, defaultMaterial };
         gameData.playTime = 0f;
         gameData.money = 100000f;
         gameData.lastPlayed = DateTime.Now.Ticks;
@@ -125,6 +135,36 @@ public class GameManager : Singleton<GameManager>
     public void PlaySaveSlotSound()
     {
         audioManager.PlaySaveSlotSound();
+    }
+
+    public void PlayBackButtonAudio()
+    {
+        audioManager.PlayBackButtonSound();
+    }
+
+    public void PlayOKButtonAudio()
+    {
+        audioManager.PlayOKButtonSound();
+    }
+
+    public void PlayChaChingButtonAudio()
+    {
+        audioManager.PlayChaChingButtonSound();
+    }
+
+    public void PlayRightAndLeftButtonAudio()
+    {
+        audioManager.PlayRightAndLeftButtonSound();
+    }
+
+    public void PlayCancelButtonAudio()
+    {
+        audioManager.PlayCancelButtonSound();
+    }
+
+    public void PlayPurchaseAudio()
+    {
+        audioManager.PlayChaChingButtonSound();
     }
 
     private static void SaveScriptableObject(GameData gameData)

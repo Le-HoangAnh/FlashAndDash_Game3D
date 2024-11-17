@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
-using Unity.VisualScripting;
 
 public class SaveSlotsModal : Modal
 {
-    public Action<bool, string> saveSlotSelect;
+    public Action<bool, string> saveSlotSelected;
 
     [SerializeField] List<GameData> saveSlots;
     [SerializeField] List<Button> saveSlotButtons;
@@ -21,18 +20,18 @@ public class SaveSlotsModal : Modal
     protected override void OnEnable()
     {
         base.OnEnable();
-        //warningModal.Init(HandleOverwriteGameData, warningModal.HideModal);
-        //for (int i = 0; i < saveSlotButtons.Count; i++)
-        //{
-        //    int index = i;
-        //    saveSlotButtons[i].onClick.AddListener(() => { HandleSaveSlotSelected(index); });
-            //bool isSaveSlotEmpty = string.IsNullOrEmpty(saveSlots[i].username);
+        warningModal.Init(HandleOverwriteGameData, warningModal.HideModal);
+        for (int i = 0; i < saveSlotButtons.Count; i++)
+        {
+            int index = i;
+            saveSlotButtons[i].onClick.AddListener(() => { HandleSaveSlotSelected(index); });
+            bool isSaveSlotEmpty = string.IsNullOrEmpty(saveSlots[i].username);
 
-            //if (!isSaveSlotEmpty)
-            //{
-            //    ShowSaveSlotInfo();
-            //}
-        //}
+            if (!isSaveSlotEmpty)
+            {
+                ShowSaveSlotInfo();
+            }
+        }
 
         if (isNewGame)
         {
@@ -66,50 +65,50 @@ public class SaveSlotsModal : Modal
         Events.saveSlotClicked?.Invoke();
         this.index = index;
 
-        //if (isNewGame && !string.IsNullOrEmpty(saveSlots[index].username))
-        //{
-        //    warningModal.ShowModal();
-        //}
-        //else
-        //{
-        //    HandleOverwriteGameData();
-        //}
+        if (isNewGame && !string.IsNullOrEmpty(saveSlots[index].username))
+        {
+            warningModal.ShowModal();
+        }
+        else
+        {
+            HandleOverwriteGameData();
+        }
     }
 
     void HandleOverwriteGameData()
     {
         SetSaveSlot();
-        saveSlotSelect?.Invoke(isNewGame, index.ToString());
+        saveSlotSelected?.Invoke(isNewGame, index.ToString());
     }
 
     void SetSaveSlot()
     {
-        //GameManager.gameData = saveSlots[index];
-        //warningModal.HideModal();
-        //HideModal();
+        GameManager.gameData = saveSlots[index];
+        warningModal.HideModal();
+        HideModal();
     }
 
     void DisableEmptySaveSlots()
     {
         for (int i = 0; i < saveSlots.Count; i++)
         {
-            //if (string.IsNullOrEmpty(saveSlots[i].username))
-            //{
-            //    saveSlotButtons[i].interactable = false;
-            //}
+            if (string.IsNullOrEmpty(saveSlots[i].username))
+            {
+                saveSlotButtons[i].interactable = false;
+            }
         }
     }
 
     void ShowSaveSlotInfo()
     {
-        //string text = "";
-        //text += saveSlots[index].username + "\n";
-        //text += "<sup>";
-        //TimeSpan time = TimeSpan.FromSeconds(saveSlots[index].playTime);
-        //text += "Time: " + new TimeSpan(time.Hours, time.Minutes, time.Seconds) + " | ";
-        //text += GameManager.GetMoneyAsString() + " | ";
-        //text += "Last played: " + new DateTime(saveSlots[index].lastPlayed);
-        //text += "</sup>";
-        //saveSlotTexts[index].SetText(text);
+        string text = "";
+        text += saveSlots[index].username + "\n";
+        text += "<sup>";
+        TimeSpan time = TimeSpan.FromSeconds(saveSlots[index].playTime);
+        text += "Time: " + new TimeSpan(time.Hours, time.Minutes, time.Seconds) + " | ";
+        text += GameManager.GetMoneyAsString() + " | ";
+        text += "Last played: " + new DateTime(saveSlots[index].lastPlayed);
+        text += "</sup>";
+        saveSlotTexts[index].SetText(text);
     }
 }
