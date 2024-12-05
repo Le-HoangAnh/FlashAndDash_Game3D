@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d93378e8d3194c48b3edfefaaed8ca2, type: 3}
   m_Name: GameData 1
   m_EditorClassIdentifier: 
-  username: 
-  metallic: 0
-  smoothness: 0
-  rimMaterials: []
-  playTime: 0
-  money: 0
-  lastPlayed: 0
+  username: rv
+  playTime: 16.167309
+  money: 100000
+  lastPlayed: 638685830223921988
   unlockedCars: 
-  currentActiveCar: 0
+  currentActiveCar: 7

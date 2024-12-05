@@ -46,7 +46,7 @@ public class CarController : Car
         
         if (!isAIControllerCar)
         {
-            //carModal.SetCarLabel(GameManager.SetUsername());
+            carModal.SetCarLabel(GameManager.GetUsername());
         }
         
         if (turboFlash != null)
@@ -127,10 +127,10 @@ public class CarController : Car
     {
         car.SetActive(shouldShow);
 
-        if (applyCustomizations == true)
-        {
-            //SetCarRims();
-        }
+        //if (applyCustomizations == true)
+        //{
+        //    SetCarRims();
+        //}
     }
 
     public GameObject GetCar()
@@ -153,20 +153,20 @@ public class CarController : Car
     //    carView.SetCarRims();
     //}
 
-    public void SetRimMaterial(Material material)
-    {
-        carView.SetRimMaterial(material);
-    }
+    //public void SetRimMaterial(Material material)
+    //{
+    //    carView.SetRimMaterial(material);
+    //}
 
     public Material[] GetCarBodyMaterials()
     {
         return carView.GetCarBodyMaterials();
     }
 
-    public Material GetRimMaterial()
-    {
-        return carView.GetRimMaterial();
-    }
+    //public Material GetRimMaterial()
+    //{
+    //    return carView.GetRimMaterial();
+    //}
 
     public float GetSpeed()
     {

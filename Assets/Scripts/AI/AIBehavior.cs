@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class AIBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject target;
+    protected AI agent;
+
+    public virtual void Awake()
     {
-        
+        agent = gameObject.GetComponent<AI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        
+        agent.SetSteering(GetSteering());
+    }
+
+    public virtual Steering GetSteering()
+    {
+        return new Steering();
     }
 }
